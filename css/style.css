@@ -27,7 +27,7 @@ body {
     gap: 40px;
     color: #fff;
     z-index: 20;
-    margin-top: -35vh;
+    margin-top: -35%;
 }
 #time .circle {
     position: relative;
@@ -44,8 +44,8 @@ body {
     transform: rotate(270deg)
 }
 #time .circle svg circle {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     fill: transparent;
     stroke: #191919;
     stroke-width: 4;
@@ -79,7 +79,7 @@ body {
 }
 .dots {
     position: absolute;
-    /* width: 100%; */
+    width: 100%;
     height: 100%;
     z-index: 10;
     display: flex;
@@ -108,8 +108,8 @@ body::before, body::after {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(#00ff59, #5af752);
     clip-path: polygon(10% 0%, 30% 30%, 10% 65%);
 }
@@ -118,20 +118,22 @@ body::after {
     clip-path: circle(20% at 85% 75%);
     z-index: -10;
 }
-.clock {
+.clock, .inside {
     position: absolute;
     margin: auto;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    width: 66vw;
-    height: 81.6vh;
+    width: 66%;
+    height: 81.6%;
     backdrop-filter: blur(15px);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-left: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
     display: flex;
+}
+.clock {
     background: rgba(255, 255, 255, 0.05);
     overflow: hidden;
     z-index: 10;
@@ -139,24 +141,15 @@ body::after {
     text-align: center;
 }
 .inside {
+    width: 75%;
+    height: 32%;
+    margin-bottom: 0;
     position: absolute;
-    margin: auto;
-    margin-top: 45vh;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 50vw;
-    height: 28vh;
+    bottom: 10%;
     padding: 10px;
-    backdrop-filter: blur(15px);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
-    display: flex;
 }
 .content {
-    width: 100vw;
+    width: 100%;
     display: grid;
     place-items: center;
 }
@@ -170,25 +163,17 @@ body::after {
     font-weight: 600;
 }
 #date {
-    margin-left: -14vw;
     color: #fff;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
 }
 .days span {
     margin: 0 10px;
     font-size: 1rem;
 }
-span#dates {
-    position: absolute;
-    margin: 4px 0 0 12px;
-}
-span#month {
-    position: absolute;
-    margin: 4px 0 0 45px;
-}
-span#year {
-    position: absolute;
-    margin: 4px 0 0 100px;
+span#dates, span#month, span#year {
+    margin: 8px 0 0 15px;
 }
 
 /* .animClass {
